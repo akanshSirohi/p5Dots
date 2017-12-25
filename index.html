@@ -1,0 +1,133 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+ <title>Particles Sketch</title>
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/p5.dom.min.js"></script>
+  <script language="javascript" type="text/javascript" src="p5Sketch.js"></script>
+  <script language="javascript" type="text/javascript" src="vehicle.js"></script>
+  <script language="javascript" type="text/javascript" src="script.js"></script>
+  <script language="javascript" type="text/javascript" src="dance.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+  <link href="webgradients.css" rel="stylesheet">
+  <!-- This line removes any default padding and style.
+       You might only need one of these values set. -->
+  <style>
+  body {
+    padding: 0;margin: 0;
+  }
+  input,button,table,select {
+    font-family: asoft;
+    font-weight: bold;
+  }
+  font.heading {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: asoft;
+    src: url(fonts/font3.ttf);
+  }
+  div#sketch-holder {
+    border-radius:2px;
+    border-style: solid;
+    border-color: black;
+  }
+  input#hiR,input#loR {
+    width:30px;
+  }
+  table,tr,td {
+     border-radius: 25px;
+     align:center;
+  }
+  td {
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: center;
+  }
+
+
+  div#bdy {
+    background-size: 400% 400%;
+    //animation: asoftH 7s ease infinite;
+  }
+
+@keyframes asoftH {
+  0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@keyframes asoftV {
+  0% {
+		background-position: 50% 50%
+	}
+	50% {
+		background-position: 100% 100%
+	}
+	100% {
+		background-position: 50% 50%
+	}
+}
+   </style>
+</head>
+
+<body>
+<div id="bdy" class="shy_rainbow">
+
+  <div id="sketch-holder" class="sh"></div>
+<center>
+  <table cellspacing="6" border="1">
+
+<tr><td>
+  <font class="heading">Sketch Options:-</font>
+</td></tr>
+
+<tr><td>
+  Enter You Name Here: <input type="text" value="Akansh" id="text">
+</td></tr>
+
+<tr><td>
+  Select Color Mode:-
+  <select onchange="showDivs(this.value);">
+      <option value="custom" selected>Custom</option>
+      <option value="random">Random</option>
+  </select>
+</td></tr>
+<tr id="colorOpt">
+  <td>Select Particles Colour: <input type="color" id="fontColor" value="#000000"></td>
+</tr>
+
+
+
+<tr><td>Selct Background Color: <input type="color" value="#ffffff" onchange="changeBg(this.value);"></td></tr>
+<tr>
+  <td>Select Particles Size Mode:
+    <select onchange="showDivs2(this.value);">
+        <option value="custom">Custom</option>
+        <option value="random" selected >Random</option>
+    </select>
+</td></tr>
+<tr id="sizeOptR">
+  <td>Enter Range: <input type="text" id="loR" value="5"><input type="text" id="hiR" value="8"></td>
+</tr>
+<tr id="sizeOptC" style="visibility:hidden;position:absolute;">
+  <td>Enter Size: <input type="text" id="noR" value="8"></td>
+</tr>
+
+
+<tr><td>Enter Font Size:- <input type="text" id="fSize" value="192"></td></tr>
+<tr><td><button onclick="rndomDance();">Random Dance</button><button onclick="dance();">Pattern Dance</button></td></tr>
+<tr><td><button onclick="updateText();">Apply Changes</button></td></tr>
+
+</table>
+</center>
+</div>
+</body>
+</html>
